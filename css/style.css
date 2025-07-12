@@ -2,6 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Tinos&display=swap');
 
+/* CSS Variables for consistent theming */
+:root {
+    --primary-color: #1E3A8A;
+    --primary-dark: #1E3A8A;
+    --primary-light: #3B82F6;
+    --secondary-color: #3B82F6;
+    --accent-color: #93C5FD;
+    --background-light: #c4e2fe;
+    --background-dark: #1E3A8A;
+    --text-primary: #1E3A8A;
+    --text-secondary: #3B82F6;
+    --text-light: #6B7280;
+    --white: #F9FAFB;
+    --shadow: rgba(30, 58, 138, 0.1);
+    --border-color: #E5E7EB;
+}
+
+html {
+    background-color: var(--background-light);
+}
+
 * {
     box-sizing: border-box;
     /* box size will not be considering padding -> make boxes to have the same size */
@@ -12,7 +33,7 @@
 
     font-weight: 500;
     font-size: 16px;
-    color: #083f2c;
+    color: var(--text-primary);
     text-decoration: none;
 }
 
@@ -30,21 +51,24 @@ strong {
 }
 
 body {
-    background-color: #f1f2ed;
+    background-color: var(--background-light);
     margin-bottom: 20px;
+    min-height: 100vh;
 }
 
 section {
     padding-top: 79px;
+    background-color: var(--background-light);
 }
    
 header {
-    background-color: #f1f2ed;
+    background-color: var(--background-light);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow);
 }
 
 li,
@@ -53,7 +77,7 @@ button {
     /* font-family: "Montserrat", sans-serif; */
     font-weight: 500;
     font-size: 16px;
-    color: #083f2c;
+    color: var(--text-primary);
     text-decoration: none;
 }
 
@@ -116,15 +140,15 @@ header {
 
 .nav__links li a:hover {
     /* hover -> when we have our mouse over it */
-    color: rgb(121, 121, 121);
+    color: var(--primary-light);
 }
 
 button {
     margin-left: 20px;
     /* leave some space between button and anchor links */
     padding: 9px 25px;
-    color: #000000;
-    background-color: rgba(244, 167, 187, 1);
+    color: var(--white);
+    background-color: var(--primary-color);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -132,14 +156,14 @@ button {
 }
 
 button:hover {
-    background-color: rgba(244, 167, 187, 0.8);
+    background-color: var(--primary-light);
 }
 
 .login-button {
     margin-left: 20px;
     padding: 9px 25px;
-    color: #083f2c;
-    background-color: #c5b443;
+    color: var(--white);
+    background-color: var(--primary-color);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -151,8 +175,8 @@ button:hover {
 }
 
 .login-button:hover {
-    background-color: #9f9312;
-    color: #083f2c;
+    background-color: var(--primary-light);
+    color: var(--white);
 }
 
 .brand-logo-name {
@@ -170,7 +194,7 @@ button:hover {
 .brand-text {
     font-family: "Archivo Black", sans-serif;
     font-size: 22.5px;
-    color: #1CA1AA;
+    color: var(--primary-color);
     margin-left: -14;
     margin-top: 0px;
 }
@@ -183,7 +207,7 @@ button:hover {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(30, 58, 138, 0.95);
     overflow-x: hidden;
     transition: 0.5s;
 }
@@ -212,14 +236,14 @@ button:hover {
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
-    color: #818181;
+    color: var(--white);
     display: block;
     transition: 0.3s;
 }
 
 .overlay-content a:hover,
 .overlay-content a:focus {
-    color: #f1f1f1;
+    color: var(--accent-color);
 }
 
 .left-text {
@@ -257,6 +281,7 @@ button:hover {
 .title-text {
     font-size: clamp(2.5rem, 2.5rem + 0.25vw, 1.8rem);
     font-family: "Archivo Black", sans-serif;
+    color: var(--primary-color);
 }
 
 .image-container {
@@ -331,7 +356,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #f1f2ed;;
+    background-color: var(--background-light);
     pointer-events: none;
     z-index: 0;
 }
@@ -364,10 +389,10 @@ button:hover {
 }
 
 .swiper-button-next, .swiper-button-prev {
-    color: black;
+    color: var(--primary-color);
 }
 .swiper-pagination-bullet-active {
-    background: black;
+    background: var(--primary-color);
 }
 
 /* ------------------INDEX-------------------- */
@@ -390,8 +415,8 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Black with 0.5 opacity */
+    background-color: rgba(30, 58, 138, 0.6);
+    /* Primary color with 0.6 opacity */
 }
 
 .image-text {
@@ -413,15 +438,15 @@ button:hover {
 .main-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #8dc3e8;
-    color: black;
+    background-color: var(--primary-color);
+    color: var(--white);
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
 }
 
 .main-button:hover {
-    background-color: #2980b9;
+    background-color: var(--primary-light);
 }
 
 /* ------------------endINDEX-------------------- */
@@ -443,7 +468,7 @@ button:hover {
 #contact-us-container div {
     width: 100%;
     height: 6vh;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid var(--border-color);
     text-align: center;
 }
 
@@ -451,23 +476,25 @@ button:hover {
 #contact-title {
    width: 100%; 
    text-align: center; 
-   border-bottom: 1px solid #000; 
+   border-bottom: 1px solid var(--primary-color); 
    line-height: 0.1em;
    margin: 10px 0 20px; 
 }
 
 #contact-title span {
-    background:#fff; 
-    padding:0 10px; 
+    background: var(--background-light); 
+    padding: 0 10px; 
 }
 
 #big-container {
     display: flex;
     /* flex-direction: row-reverse; */
+    background-color: var(--background-light);
 }
 
 #left-container {
     width: 50vw;
+    background-color: var(--background-light);
 }
 
 #right-container {
@@ -475,6 +502,7 @@ button:hover {
     height: 113vh;
     display: flex;
     flex-direction: column-reverse;
+    background-color: var(--background-light);
 }
 
 #map-container {
@@ -496,14 +524,14 @@ button:hover {
 h2 {
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--primary-color);
     line-height: 0.1em;
     margin: 10px 0 20px;
     font-size: 32px;
 }
 
 span {
-    background: #f1f2ed;;
+    background: var(--background-light);
     padding: 0 10px;
     font-size: 32px;
     /* font-family: 'Tinos', serif; */
@@ -551,15 +579,20 @@ span {
     width: 300px;
     height: 200px;
     margin: 15px;
-    background-color: white;
-    color: black;
+    background-color: var(--background-dark);
+    color: white;
     text-align: center;
     line-height: 35px;
     transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .box:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 25px var(--shadow);
+    background-color: var(--accent-color);
 }
 
 #img-box {
@@ -580,6 +613,23 @@ span {
 
 #work {
     height: fit-content;
+}
+
+/* Additional background color rules */
+footer {
+    background-color: var(--background-light);
+}
+
+#image-partner {
+    background-color: var(--background-light);
+}
+
+#testimony-title {
+    background-color: var(--background-light);
+}
+
+#company-description-title {
+    background-color: var(--background-light);
 }
 
 /* IPAD SCREEN CSS */
